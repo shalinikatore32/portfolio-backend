@@ -6,24 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
-const allowedOrigins = [
-  "http://localhost:3000", // for local development
-  "https://portfolio-frontend-nriqawm9f-shalinis-projects-1fcdab1f.vercel.app/", // your deployed frontend
-];
-
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // allow requests with no origin (like mobile apps or curl)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      } else {
-        return callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
