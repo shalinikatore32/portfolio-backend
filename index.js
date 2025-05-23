@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const allowedOrigins = [
   "http://localhost:3000", // for local development
-  "https://portfolio-frontend-sage-chi.vercel.app/", // your deployed frontend
+  "https://portfolio-frontend-nriqawm9f-shalinis-projects-1fcdab1f.vercel.app/", // your deployed frontend
 ];
 
 app.use(
